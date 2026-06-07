@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mente Curada</title>
+  <meta name="description" content="Curadoria intelectual do pensamento de Chris Kumakola sobre narrativa, autoridade e posicionamento." />
+  <meta name="theme-color" content="#08080c" />
+
+  <!-- OG -->
+  <meta property="og:title" content="Mente Curada" />
+  <meta property="og:description" content="Um insight por dia sobre narrativa, autoridade e identidade." />
+  <meta property="og:type" content="website" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=IM+Fell+English+SC&family=Raleway:wght@200;300&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+  <!-- ── Nav ────────────────────────────────────────────── -->
+  <nav>
+    <a class="nav-brand" href="#oracle">
+      Mente Curada <span>· Chris Kumakola</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#oracle"     data-route="oracle">Oráculo</a></li>
+      <li><a href="#biblioteca" data-route="biblioteca">Biblioteca</a></li>
+      <li><a href="#sobre"      data-route="sobre">Sobre</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── Main ───────────────────────────────────────────── -->
+  <main>
+
+    <!-- Oracle view -->
+    <section id="view-oracle" class="view">
+      <div class="oracle-inner">
+        <div class="oracle-eye"></div>
+        <p class="oracle-category" id="oracle-category">—</p>
+        <p class="oracle-text" id="oracle-text"></p>
+        <span class="oracle-rule" id="oracle-rule"></span>
+        <span class="oracle-source" id="oracle-source"></span>
+      </div>
+
+      <div class="oracle-controls">
+        <button class="ctrl-btn" id="btn-prev">← Anterior</button>
+        <div class="ctrl-dot"></div>
+        <button class="ctrl-btn" id="btn-random">Aleatório</button>
+        <div class="ctrl-dot"></div>
+        <button class="ctrl-btn" id="btn-next">Próximo →</button>
+      </div>
+
+      <div class="oracle-counter" id="oracle-counter"></div>
+      <div class="oracle-kbd">← espaço →</div>
+    </section>
+
+    <!-- Biblioteca view -->
+    <section id="view-biblioteca" class="view">
+      <div class="bib-header">
+        <h1 class="bib-title">Biblioteca</h1>
+        <span class="bib-count" id="bib-count"></span>
+      </div>
+
+      <div class="search-wrap">
+        <input
+          class="search-input"
+          id="bib-search"
+          type="search"
+          placeholder="Buscar insights, categorias, fontes…"
+          autocomplete="off"
+        />
+      </div>
+
+      <div class="filter-bar" id="bib-filters"></div>
+
+      <div class="cards-grid" id="bib-cards"></div>
+    </section>
+
+    <!-- Sobre view -->
+    <section id="view-sobre" class="view">
+      <div class="sobre-head">
+        <span class="sobre-kicker">Curadoria · Chris Kumakola</span>
+        <h1 class="sobre-title">Narrativa muda destino</h1>
+      </div>
+
+      <div class="sobre-body">
+        <p>
+          <strong>Mente Curada</strong> é uma curadoria pessoal do pensamento público de
+          Chris Kumakola — analista comportamental, estrategista de narrativa,
+          autora e mentora brasileira.
+        </p>
+
+        <p>
+          Todo o conteúdo foi extraído de material publicado voluntariamente pela autora:
+          seu site, artigos do Medium, perfil de palestrante e conteúdos do YouTube.
+          O objetivo é estudo pessoal e aprofundamento na sua metodologia.
+        </p>
+
+        <blockquote>
+          "Existem apenas dois tipos de profissionais: os que são conduzidos por narrativas
+          e os que conduzem. Você não escolhe estar em um desses grupos — você já está."
+        </blockquote>
+
+        <p>
+          Chris é referência nacional em <strong>arquitetura de narrativa</strong> —
+          o alinhamento entre identidade interna, comunicação dos feitos e
+          coerência sustentada ao longo do tempo. Sua metodologia foi desenvolvida a partir
+          de uma trajetória que inclui liderar uma holding de recuperação judicial aos 26 anos,
+          pesquisa no Memorial de Auschwitz-Birkenau e formação em Harvard.
+        </p>
+
+        <p>
+          O app exibe um insight diferente a cada visita. Use a
+          <strong>Biblioteca</strong> para navegar todos os insights por categoria
+          ou pesquisar por palavra-chave.
+        </p>
+
+        <div class="sobre-links">
+          <a class="sobre-link" href="https://chriskumakola.com" target="_blank" rel="noopener">
+            <span class="sobre-link-label">Site Oficial</span>
+            <span class="sobre-link-url">chriskumakola.com</span>
+          </a>
+          <a class="sobre-link" href="https://youtube.com/@ChrisKumakola" target="_blank" rel="noopener">
+            <span class="sobre-link-label">YouTube</span>
+            <span class="sobre-link-url">@ChrisKumakola</span>
+          </a>
+          <a class="sobre-link" href="https://medium.com/@chriskumakola" target="_blank" rel="noopener">
+            <span class="sobre-link-label">Medium</span>
+            <span class="sobre-link-url">@chriskumakola</span>
+          </a>
+          <a class="sobre-link" href="https://linktr.ee/chriskumakola" target="_blank" rel="noopener">
+            <span class="sobre-link-label">Linktree</span>
+            <span class="sobre-link-url">linktr.ee/chriskumakola</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── Modal ──────────────────────────────────────────── -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal">
+      <button class="modal-close" id="modal-close" aria-label="Fechar">✕</button>
+      <span class="modal-cat" id="modal-cat"></span>
+      <p class="modal-text" id="modal-text"></p>
+      <div class="modal-rule"></div>
+      <span class="modal-source" id="modal-source"></span>
+      <div class="modal-actions">
+        <button class="modal-btn" id="modal-copy-btn">Copiar</button>
+        <button class="modal-btn" id="modal-oracle-btn">Ver no Oráculo</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/app.js"></script>
+</body>
+</html>
