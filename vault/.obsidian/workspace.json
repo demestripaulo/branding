@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "03 - Insights/Frases e Princípios.md",
+                "file": "04 - Livros/Livros.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Frases e Princípios"
+              "title": "Livros"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "03 - Insights/Frases e Princípios.md",
+                "file": "04 - Livros/Livros.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Frases e Princípios"
+              "title": "Backlinks for Livros"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "03 - Insights/Frases e Princípios.md",
+                "file": "04 - Livros/Livros.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Frases e Princípios"
+              "title": "Outgoing links from Livros"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "03 - Insights/Frases e Princípios.md",
+                "file": "04 - Livros/Livros.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Frases e Princípios"
+              "title": "Outline of Livros"
             }
           }
         ]
