@@ -292,5 +292,22 @@ document.addEventListener('DOMContentLoaded', () => {
     copyText(text);
   });
 
+  // Touch swipe for oracle navigation
+  let _touchX = 0, _touchY = 0;
+  const oracleView = document.getElementById('view-oracle');
+  if (oracleView) {
+    oracleView.addEventListener('touchstart', e => {
+      _touchX = e.touches[0].clientX;
+      _touchY = e.touches[0].clientY;
+    }, { passive: true });
+    oracleView.addEventListener('touchend', e => {
+      const dx = e.changedTouches[0].clientX - _touchX;
+      const dy = e.changedTouches[0].clientY - _touchY;
+      if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5) {
+        dx < 0 ? oracleNext() : oraclePrev();
+      }
+    }, { passive: true });
+  }
+
   loadInsights();
 });

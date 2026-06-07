@@ -906,11 +906,47 @@ main {
   to   { opacity: 1; transform: translateY(0); }
 }
 
+/* ─── Touch hint (hidden by default, shown on mobile) ────── */
+.oracle-touch-hint {
+  display: none;
+  position: fixed;
+  bottom: 2rem;
+  left: var(--gutter);
+  font-family: var(--font-sans);
+  font-weight: 200;
+  font-size: 0.44rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  z-index: 10;
+  opacity: 0;
+  animation: fade-up 1s var(--ease-out) 1.2s both;
+}
+
 /* ─── Mobile ─────────────────────────────────────────────── */
 @media (max-width: 640px) {
-  .nav-links { gap: 1.2rem; }
+  .nav-links { gap: 1rem; }
+  .nav-brand span { display: none; }
+
+  #view-oracle {
+    height: auto;
+    min-height: calc(100vh - var(--nav-h));
+    justify-content: flex-start;
+    padding-top: 2.5rem;
+    padding-bottom: 7.5rem;
+    overflow-y: auto;
+  }
+  .oracle-text { font-size: 1.2rem; min-height: 0; }
   .oracle-kbd { display: none; }
-  .oracle-controls { gap: 1.4rem; }
+  .oracle-touch-hint { display: block; }
+  .oracle-controls { gap: 1rem; }
+  .ctrl-btn { padding: 0.9rem 0.5rem; }
+
   .cards-grid { grid-template-columns: 1fr; }
+  .card-footer { flex-wrap: wrap; gap: 0.5rem; }
+
+  .modal { padding: 2rem 1.5rem; }
+  .modal-actions { flex-wrap: wrap; }
+
   .sobre-body p { font-size: 0.95rem; }
 }
