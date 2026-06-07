@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mente Curada</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=IM+Fell+English+SC&family=Raleway:wght@200;300&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #07070a;
+      --surface:   #0e0e14;
+      --gold:      #b8933a;
+      --gold-dim:  #7a5f20;
+      --text:      #d8cebc;
+      --text-dim:  #6b6354;
+      --text-muted:#3a3530;
+    }
+
+    html, body {
+      height: 100%;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      overflow: hidden;
+      cursor: default;
+      user-select: none;
+    }
+
+    /* Film grain overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+      opacity: 0.028;
+      pointer-events: none;
+      z-index: 100;
+    }
+
+    /* Vignette */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.72) 100%);
+      pointer-events: none;
+      z-index: 99;
+    }
+
+    .scene {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1.5rem;
+      position: relative;
+    }
+
+    /* Top mark */
+    .mark {
+      position: fixed;
+      top: 2.4rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'IM Fell English SC', serif;
+      font-size: 0.62rem;
+      letter-spacing: 0.38em;
+      color: var(--gold-dim);
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    /* Thin horizontal rule */
+    .rule {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, transparent, var(--gold-dim), transparent);
+      margin-bottom: 3.2rem;
+      opacity: 0;
+      animation: fadein 1.6s ease 0.4s forwards;
+    }
+
+    /* Category chip */
+    .category {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 200;
+      font-size: 0.52rem;
+      letter-spacing: 0.5em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    /* Main insight text */
+    .insight {
+      max-width: 680px;
+      width: 100%;
+      text-align: center;
+      font-size: clamp(1.25rem, 2.6vw, 1.7rem);
+      font-weight: 300;
+      line-height: 1.72;
+      color: var(--text);
+      font-style: italic;
+      letter-spacing: 0.01em;
+      opacity: 0;
+      transition: opacity 0.8s ease;
+    }
+
+    /* Separator */
+    .sep {
+      display: block;
+      width: 32px;
+      height: 1px;
+      background: var(--gold-dim);
+      margin: 2.4rem auto 1.6rem;
+      opacity: 0;
+      transition: opacity 0.5s ease 0.3s;
+    }
+
+    /* Source attribution */
+    .source {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 200;
+      font-size: 0.55rem;
+      letter-spacing: 0.4em;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      opacity: 0;
+      transition: opacity 0.5s ease 0.5s;
+    }
+
+    /* Controls */
+    .controls {
+      position: fixed;
+      bottom: 2.8rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: 2.4rem;
+      opacity: 0;
+      animation: fadein 1.2s ease 1.2s forwards;
+    }
+
+    .btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--text-muted);
+      font-family: 'Raleway', sans-serif;
+      font-weight: 200;
+      font-size: 0.52rem;
+      letter-spacing: 0.44em;
+      text-transform: uppercase;
+      padding: 0.5rem 0;
+      transition: color 0.3s ease;
+      position: relative;
+    }
+    .btn::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 50%; right: 50%;
+      height: 1px;
+      background: var(--gold);
+      transition: left 0.3s ease, right 0.3s ease;
+    }
+    .btn:hover { color: var(--gold); }
+    .btn:hover::after { left: 0; right: 0; }
+
+    .dot {
+      width: 2px;
+      height: 2px;
+      border-radius: 50%;
+      background: var(--text-muted);
+    }
+
+    /* Counter */
+    .counter {
+      position: fixed;
+      bottom: 2.8rem;
+      right: 2.8rem;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 200;
+      font-size: 0.5rem;
+      letter-spacing: 0.3em;
+      color: var(--text-muted);
+      opacity: 0;
+      animation: fadein 1.2s ease 1.4s forwards;
+    }
+
+    /* Mode indicator */
+    .mode-label {
+      position: fixed;
+      top: 2.4rem;
+      right: 2.8rem;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 200;
+      font-size: 0.48rem;
+      letter-spacing: 0.4em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      opacity: 0;
+      animation: fadein 1.2s ease 1.4s forwards;
+      transition: color 0.3s;
+    }
+    .mode-label.active { color: var(--gold-dim); }
+
+    /* Visible state for animated elements */
+    .visible { opacity: 1 !important; }
+
+    @keyframes fadein {
+      to { opacity: 1; }
+    }
+
+    /* Keyboard hint */
+    .hint {
+      position: fixed;
+      bottom: 2.8rem;
+      left: 2.8rem;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 200;
+      font-size: 0.46rem;
+      letter-spacing: 0.3em;
+      color: var(--text-muted);
+      opacity: 0;
+      animation: fadein 1s ease 2s forwards;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="mark">Mente Curada · Chris Kumakola</div>
+  <div class="mode-label" id="modeLabel">Aleatório</div>
+
+  <div class="scene">
+    <div class="rule"></div>
+    <div class="category" id="category">—</div>
+    <p class="insight" id="insight"></p>
+    <span class="sep" id="sep"></span>
+    <span class="source" id="source"></span>
+  </div>
+
+  <div class="controls">
+    <button class="btn" id="btnPrev">← Anterior</button>
+    <div class="dot"></div>
+    <button class="btn" id="btnRandom">Aleatório</button>
+    <div class="dot"></div>
+    <button class="btn" id="btnNext">Próximo →</button>
+  </div>
+
+  <div class="counter" id="counter"></div>
+  <div class="hint">← → para navegar · espaço para aleatório</div>
+
+  <script>
+    let insights = [];
+    let current = 0;
+    let order = [];
+    let autoTimer = null;
+
+    async function load() {
+      const r = await fetch('./data/insights.json');
+      insights = await r.json();
+      shuffle();
+      show(0);
+    }
+
+    function shuffle() {
+      order = insights.map((_, i) => i);
+      for (let i = order.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [order[i], order[j]] = [order[j], order[i]];
+      }
+    }
+
+    function show(idx) {
+      current = ((idx % order.length) + order.length) % order.length;
+      const it = insights[order[current]];
+
+      const el = document.getElementById('insight');
+      const cat = document.getElementById('category');
+      const src = document.getElementById('source');
+      const sep = document.getElementById('sep');
+      const ctr = document.getElementById('counter');
+
+      // Fade out
+      el.classList.remove('visible');
+      cat.classList.remove('visible');
+      src.classList.remove('visible');
+      sep.classList.remove('visible');
+
+      setTimeout(() => {
+        el.textContent  = `"${it.text}"`;
+        cat.textContent = it.category.replace(/-/g, ' ');
+        src.textContent = it.source;
+        ctr.textContent = `${current + 1} / ${insights.length}`;
+
+        // Fade in
+        el.classList.add('visible');
+        cat.classList.add('visible');
+        src.classList.add('visible');
+        sep.classList.add('visible');
+      }, 420);
+    }
+
+    function next()   { show(current + 1); }
+    function prev()   { show(current - 1); }
+    function random() { show(Math.floor(Math.random() * insights.length)); }
+
+    document.getElementById('btnNext').addEventListener('click', next);
+    document.getElementById('btnPrev').addEventListener('click', prev);
+    document.getElementById('btnRandom').addEventListener('click', random);
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'ArrowRight') next();
+      if (e.key === 'ArrowLeft')  prev();
+      if (e.key === ' ')          random();
+    });
+
+    load();
+  </script>
+</body>
+</html>
