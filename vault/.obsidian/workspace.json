@@ -11,14 +11,10 @@
             "id": "869c3a170b2be817",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "04 - Livros/Livros.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Livros"
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
             }
           }
         ]
@@ -94,7 +90,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "04 - Livros/Livros.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +99,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Livros"
+              "title": "Backlinks"
             }
           },
           {
@@ -113,12 +108,11 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "04 - Livros/Livros.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Livros"
+              "title": "Outgoing links"
             }
           },
           {
@@ -156,13 +150,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "04 - Livros/Livros.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Livros"
+              "title": "Outline"
             }
           }
         ]
@@ -185,6 +178,12 @@
   },
   "active": "869c3a170b2be817",
   "lastOpenFiles": [
+    "04 - Livros/Livros.md",
+    "05 - Artigos/YouTube/O Poder da Narrativa — Criando Asas Podcast.md",
+    "05 - Artigos/YouTube/Efeito Narrativa — Marina na América.md",
+    "05 - Artigos/YouTube/Efeito Narrativa — Geraldo Rufino.md",
+    "05 - Artigos/YouTube/Chris Kumakola — CEOTV Podcast.md",
+    "05 - Artigos/YouTube",
     "03 - Insights/Frases e Princípios.md",
     "02 - Frameworks/Arquitetura de Narrativa.md",
     "01 - Perfil/Chris Kumakola.md",
