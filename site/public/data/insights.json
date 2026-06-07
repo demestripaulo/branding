@@ -243,5 +243,189 @@
     "category": "escrita",
     "source": "chriskumakola.com",
     "type": "principio"
+  },
+  {
+    "id": 36,
+    "text": "Quando você chama seu conhecimento de 'dica', você pega tudo isso e fica desse tamanhinho. Use 'sugestão'. Comunica que houve estudo, teste e investimento de tempo. A palavra que você escolhe para nomear seu conhecimento define quanto vale.",
+    "category": "comunicacao",
+    "source": "YouTube — Efeito Narrativa com Marina Benício",
+    "type": "tecnica",
+    "youtube_url": "https://www.youtube.com/watch?v=DYC15Vewfeg"
+  },
+  {
+    "id": 37,
+    "text": "O leão que imita o leão se torna macaco. Não se torna nem leão, nem ele mesmo. Quando você copia o outro, você não se torna o original que tentou imitar — você perde todo o potencial que já tinha.",
+    "category": "autenticidade",
+    "source": "YouTube — Efeito Narrativa com Marina Benício",
+    "type": "quote",
+    "youtube_url": "https://www.youtube.com/watch?v=DYC15Vewfeg"
+  },
+  {
+    "id": 38,
+    "text": "Energia transparece. Se você está produzindo conteúdo em estado de infelicidade ou forçamento, quem está do outro lado da tela percebe. A autenticidade da narrativa interna é o que gera conexão genuína.",
+    "category": "narrativa",
+    "source": "YouTube — Efeito Narrativa com Marina Benício",
+    "type": "principio",
+    "youtube_url": "https://www.youtube.com/watch?v=DYC15Vewfeg"
+  },
+  {
+    "id": 39,
+    "text": "Primeiro as pessoas compram você, depois compram o seu produto. A relação de confiança com o seu público é o ativo que mais demora para se construir e o mais rápido para se perder.",
+    "category": "posicionamento",
+    "source": "YouTube — Efeito Narrativa com Marina Benício",
+    "type": "principio",
+    "youtube_url": "https://www.youtube.com/watch?v=DYC15Vewfeg"
+  },
+  {
+    "id": 40,
+    "text": "Você não precisa de Ferrari nem de colocar o rosto num balde de gelo às 5h da manhã para ter uma vida interessante. O que conecta é o reconhecimento que você gera no outro: 'parece comigo, me motiva, me agrega valor.'",
+    "category": "autenticidade",
+    "source": "YouTube — Efeito Narrativa com Marina Benício",
+    "type": "principio",
+    "youtube_url": "https://www.youtube.com/watch?v=DYC15Vewfeg"
+  },
+  {
+    "id": 41,
+    "text": "Rapport começa no vocabulário. Quando você usa as mesmas palavras do seu público, seu inconsciente se conecta ao dele. Estudar como seu seguidor fala não é manipulação — é o começo de toda comunicação real.",
+    "category": "comunicacao",
+    "source": "YouTube — Efeito Narrativa com Marina Benício",
+    "type": "tecnica",
+    "youtube_url": "https://www.youtube.com/watch?v=DYC15Vewfeg"
+  },
+  {
+    "id": 42,
+    "text": "Narrativa precede storytelling. De que adianta contar uma história para os outros se você não conta a história para você primeiro? Storytelling sem narrativa interna é cascata sem nascente.",
+    "category": "narrativa",
+    "source": "YouTube — Criando Asas Podcast",
+    "type": "principio",
+    "youtube_url": "https://www.youtube.com/watch?v=8o4YWkeVd-Q"
+  },
+  {
+    "id": 43,
+    "text": "'Mudar' e 'transformar' têm o mesmo significado no dicionário, mas sensações opostas. Mudar evoca caixas, suor, transtorno. Transformar evoca borboleta, casulo e voo. As palavras que você escolhe não descrevem a realidade — elas criam sensações que moldam decisões.",
+    "category": "linguagem",
+    "source": "YouTube — Criando Asas Podcast",
+    "type": "tecnica",
+    "youtube_url": "https://www.youtube.com/watch?v=8o4YWkeVd-Q"
+  },
+  {
+    "id": 44,
+    "text": "Stanford colocou head hunters em ressonância magnética e deu-lhes pilhas de currículos. Todos demoravam 3 segundos para decidir. O padrão ocular era idêntico. O posicionamento das palavras na sua bio é ciência — não opinião.",
+    "category": "posicionamento",
+    "source": "YouTube — Criando Asas Podcast",
+    "type": "dado",
+    "youtube_url": "https://www.youtube.com/watch?v=8o4YWkeVd-Q"
+  },
+  {
+    "id": 45,
+    "text": "Uma campanha associou diamante a amor eterno. Em menos de 3 anos, a venda de solitários subiu +80%. Quase 100 anos depois, o diamante ainda está gravado no inconsciente coletivo. Narrativa construída com símbolo e emoção não envelhece.",
+    "category": "narrativa",
+    "source": "YouTube — Criando Asas Podcast",
+    "type": "reflexao",
+    "youtube_url": "https://www.youtube.com/watch?v=8o4YWkeVd-Q"
+  },
+  {
+    "id": 46,
+    "text": "Engenheiros buscavam como fazer o elevador subir mais rápido. Um arquiteto perguntou: 'como faço o tempo passar?' Daí surgiram os espelhos. Pensar fora da caixinha é ir na causa da sensação, não no sintoma técnico.",
+    "category": "comportamento",
+    "source": "YouTube — Criando Asas Podcast",
+    "type": "reflexao",
+    "youtube_url": "https://www.youtube.com/watch?v=8o4YWkeVd-Q"
+  },
+  {
+    "id": 47,
+    "text": "Ninguém quer saber da sua história. Se ela não ajudar — prática ou emocionalmente — alguma coisa na vida do outro, ela é apenas autobiografia. O critério de uma narrativa pública é a entrega que ela gera.",
+    "category": "narrativa",
+    "source": "YouTube — Criando Asas Podcast",
+    "type": "principio",
+    "youtube_url": "https://www.youtube.com/watch?v=8o4YWkeVd-Q"
+  },
+  {
+    "id": 48,
+    "text": "Diante de qualquer problema, antes de dizer 'não consigo', pergunte: 'como eu faço?' O subconsciente vai buscar a solução em todo o seu arsenal. Cada problema resolvido abre um novo caminho neurológico — neuroplasticidade como prática de narrativa.",
+    "category": "comportamento",
+    "source": "YouTube — Criando Asas Podcast",
+    "type": "tecnica",
+    "youtube_url": "https://www.youtube.com/watch?v=8o4YWkeVd-Q"
+  },
+  {
+    "id": 49,
+    "text": "A narrativa não está no digital. Está no offline — no que você acredita sobre si mesmo no silêncio da manhã, antes de falar com qualquer pessoa. A rede social é apenas o transbordo dessa narrativa interna.",
+    "category": "narrativa",
+    "source": "YouTube — CEOTV Podcast",
+    "type": "principio",
+    "youtube_url": "https://www.youtube.com/watch?v=ZG0vxaz-Q_A"
+  },
+  {
+    "id": 50,
+    "text": "Como você interpreta o que acontece com você guia suas atitudes para o futuro sem que você perceba. O pai que soltou a bicicleta não traiu — ensinou. A narrativa que você escolhe sobre o passado programa o presente.",
+    "category": "narrativa",
+    "source": "YouTube — CEOTV Podcast",
+    "type": "reflexao",
+    "youtube_url": "https://www.youtube.com/watch?v=ZG0vxaz-Q_A"
+  },
+  {
+    "id": 51,
+    "text": "Quando você fala, você escuta três vezes: antes de falar, enquanto fala, e quando ouve sua própria voz. Você está afirmando três vezes para o subconsciente que você é aquilo que diz. Cuidado extremo com o que você fala sobre você mesmo.",
+    "category": "linguagem",
+    "source": "YouTube — CEOTV Podcast",
+    "type": "tecnica",
+    "youtube_url": "https://www.youtube.com/watch?v=ZG0vxaz-Q_A"
+  },
+  {
+    "id": 52,
+    "text": "Nenhuma narrativa fraudulenta resiste ao tempo. Nenhuma. O tempo é o maior auditor de toda narrativa — e os laudos de Auschwitz provam que nem o poder extremo consegue falsificar para sempre.",
+    "category": "integridade",
+    "source": "YouTube — CEOTV Podcast",
+    "type": "principio",
+    "youtube_url": "https://www.youtube.com/watch?v=ZG0vxaz-Q_A"
+  },
+  {
+    "id": 53,
+    "text": "A beleza abre portas, mas não assina contrato. Capital erótico — presença, voz, gestos, postura — atrai. É a narrativa, o que você sabe e como articula, que fecha o negócio.",
+    "category": "posicionamento",
+    "source": "YouTube — CEOTV Podcast",
+    "type": "quote",
+    "youtube_url": "https://www.youtube.com/watch?v=ZG0vxaz-Q_A"
+  },
+  {
+    "id": 54,
+    "text": "Pessoas não seguem marcas. Não seguem Instagrams de template Canva. Seguem o que tem vida. E o que tem vida é o ser humano por trás — com sua história, suas contradições e sua presença real.",
+    "category": "branding",
+    "source": "YouTube — CEOTV Podcast",
+    "type": "principio",
+    "youtube_url": "https://www.youtube.com/watch?v=ZG0vxaz-Q_A"
+  },
+  {
+    "id": 55,
+    "text": "Existem duas vozinhas na cabeça: a que diz 'você consegue' e a que diz 'esquece, não é para você'. Você escolhe qual alimentar. Essa escolha, feita todos os dias, é o que define o trajeto — não o ponto de chegada.",
+    "category": "narrativa",
+    "source": "YouTube — Efeito Narrativa com Geraldo Rufino",
+    "type": "principio",
+    "youtube_url": "https://www.youtube.com/watch?v=AStG-79AjO0"
+  },
+  {
+    "id": 56,
+    "text": "Para se comunicar bem, você precisa primeiro entender como o outro pensa. Cada ser humano exige um tipo de comunicação diferente — não existem dois DNAs iguais, duas impressões digitais idênticas. Adaptar-se é inteligência narrativa.",
+    "category": "comunicacao",
+    "source": "YouTube — Efeito Narrativa com Geraldo Rufino",
+    "type": "principio",
+    "youtube_url": "https://www.youtube.com/watch?v=AStG-79AjO0"
+  },
+  {
+    "id": 57,
+    "text": "O erro só é erro quando é negativo e você o torna repetitivo. Do contrário, é aprendizado. A forma como você olha as pedras do caminho — como degrau ou como obstáculo — é uma escolha de narrativa.",
+    "category": "comportamento",
+    "source": "YouTube — Efeito Narrativa com Geraldo Rufino",
+    "type": "principio",
+    "youtube_url": "https://www.youtube.com/watch?v=AStG-79AjO0"
+  },
+  {
+    "id": 58,
+    "text": "Qual a narrativa que vou assumir a partir daqui? Não é criar uma narrativa falsa — é sentir e abraçar genuinamente a perspectiva que te constrói. É a diferença entre narrativa orgânica e performance vazia.",
+    "category": "autoconhecimento",
+    "source": "YouTube — Efeito Narrativa com Geraldo Rufino",
+    "type": "principio",
+    "youtube_url": "https://www.youtube.com/watch?v=AStG-79AjO0"
   }
 ]

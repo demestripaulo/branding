@@ -866,6 +866,40 @@ main {
   color: var(--gold);
 }
 
+/* ─── YouTube links ─────────────────────────────────────── */
+.card-yt-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: 0.44rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  text-decoration: none;
+  border: 1px solid transparent;
+  padding: 0.15rem 0.5rem;
+  transition: all 0.2s;
+}
+.card-yt-link:hover {
+  color: var(--gold);
+  border-color: var(--gold-dim);
+}
+
+.modal-btn--yt {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  text-decoration: none;
+  color: var(--gold-dim);
+  border-color: var(--gold-dim);
+}
+.modal-btn--yt:hover {
+  color: var(--gold);
+  border-color: var(--gold);
+}
+
 /* ─── Utilities ──────────────────────────────────────────── */
 @keyframes fade-up {
   from { opacity: 0; transform: translateY(12px); }

@@ -108,6 +108,7 @@ const CATEGORY_LABELS = {
   performance:     'Performance',
   experiencia:     'Experiência',
   integridade:     'Integridade',
+  linguagem:       'Linguagem',
 };
 
 function getCategories() {
@@ -167,11 +168,15 @@ function renderBiblioteca() {
     filtered.forEach((it, i) => {
       const card = document.createElement('div');
       card.className = 'insight-card';
+      const ytLink = it.youtube_url
+        ? `<a class="card-yt-link" href="${it.youtube_url}" target="_blank" rel="noopener" title="Ver no YouTube" onclick="event.stopPropagation()">▶ YouTube</a>`
+        : '';
       card.innerHTML = `
         <span class="card-cat">${(CATEGORY_LABELS[it.category] || it.category).toUpperCase()}</span>
         <p class="card-text">"${it.text}"</p>
         <div class="card-footer">
           <span class="card-source">${it.source}</span>
+          ${ytLink}
           <span class="card-arrow">→</span>
         </div>
       `;
@@ -189,6 +194,23 @@ function openModal(it) {
   document.getElementById('modal-cat').textContent    = (CATEGORY_LABELS[it.category] || it.category).toUpperCase();
   document.getElementById('modal-text').textContent   = `"${it.text}"`;
   document.getElementById('modal-source').textContent = it.source;
+
+  // YouTube link in modal
+  const existingYt = document.getElementById('modal-yt-link');
+  if (existingYt) existingYt.remove();
+  if (it.youtube_url) {
+    const actions = document.querySelector('.modal-actions');
+    if (actions) {
+      const ytBtn = document.createElement('a');
+      ytBtn.id        = 'modal-yt-link';
+      ytBtn.className = 'modal-btn modal-btn--yt';
+      ytBtn.href      = it.youtube_url;
+      ytBtn.target    = '_blank';
+      ytBtn.rel       = 'noopener';
+      ytBtn.textContent = '▶ Ver no YouTube';
+      actions.appendChild(ytBtn);
+    }
+  }
 
   overlay.classList.add('open');
   document.body.style.overflow = 'hidden';
