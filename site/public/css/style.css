@@ -535,6 +535,233 @@ main {
   color: var(--text-dim);
 }
 
+/* ─── Oracle legal link ──────────────────────────────────── */
+.oracle-legal-link {
+  position: fixed;
+  top: calc(var(--nav-h) + 0.8rem);
+  right: var(--gutter);
+  font-family: var(--font-sans);
+  font-weight: 200;
+  font-size: 0.44rem;
+  letter-spacing: 0.36em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-decoration: none;
+  z-index: 10;
+  transition: color 0.2s;
+}
+.oracle-legal-link:hover { color: var(--gold-dim); }
+
+/* ─── Footer ─────────────────────────────────────────────── */
+#site-footer {
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+  padding: 2rem var(--gutter);
+  display: none; /* shown via JS on non-oracle views */
+}
+#site-footer.visible { display: block; }
+
+.footer-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+.footer-rights {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: 0.52rem;
+  letter-spacing: 0.3em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+}
+.footer-rights a {
+  color: var(--gold-dim);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-rights a:hover { color: var(--gold); }
+
+.footer-disclaimer {
+  font-family: var(--font-sans);
+  font-weight: 200;
+  font-size: 0.46rem;
+  letter-spacing: 0.22em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  line-height: 1.8;
+}
+
+.footer-legal-link {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: 0.46rem;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  text-decoration: none;
+  margin-top: 0.3rem;
+  transition: color 0.2s;
+  position: relative;
+  padding-bottom: 2px;
+}
+.footer-legal-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 100%;
+  height: 1px;
+  background: var(--gold);
+  transition: right 0.25s var(--ease-out);
+}
+.footer-legal-link:hover { color: var(--gold); }
+.footer-legal-link:hover::after { right: 0; }
+
+/* ─── Aviso Legal view ───────────────────────────────────── */
+#view-aviso {
+  padding: 3.5rem var(--gutter) 5rem;
+}
+
+.aviso-wrap {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.aviso-head {
+  margin-bottom: 3rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.aviso-kicker {
+  display: block;
+  font-family: var(--font-sans);
+  font-weight: 200;
+  font-size: 0.5rem;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.2rem;
+}
+
+.aviso-title {
+  font-family: var(--font-sc);
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  color: var(--text);
+  margin-bottom: 1.2rem;
+}
+
+.aviso-subtitle {
+  font-size: 1.05rem;
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--text-mid);
+  font-style: italic;
+}
+.aviso-subtitle strong { color: var(--text); font-style: normal; font-weight: 400; }
+
+.aviso-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.aviso-section {
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.aviso-section:last-child { border-bottom: none; }
+
+.aviso-section-title {
+  font-family: var(--font-sc);
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--gold-dim);
+  letter-spacing: 0.04em;
+}
+
+.aviso-section p {
+  font-size: 0.97rem;
+  font-weight: 300;
+  line-height: 1.85;
+  color: var(--text-mid);
+}
+.aviso-section p strong {
+  color: var(--text);
+  font-weight: 400;
+}
+
+.aviso-contact-link {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: 0.55rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  text-decoration: none;
+  padding: 0.6rem 0;
+  transition: color 0.2s;
+}
+.aviso-contact-link:hover { color: var(--gold); }
+
+.aviso-sources {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 0.5rem;
+}
+
+.aviso-source-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border);
+  text-decoration: none;
+  color: var(--text-mid);
+  transition: color 0.2s;
+}
+.aviso-source-link:last-child { border-bottom: none; }
+.aviso-source-link:hover { color: var(--gold); }
+.aviso-source-link span:first-child {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: 0.52rem;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+}
+.aviso-source-link span:last-child {
+  font-family: var(--font-sans);
+  font-weight: 200;
+  font-size: 0.48rem;
+  letter-spacing: 0.2em;
+  color: var(--text-dim);
+}
+.aviso-source-link:hover span:last-child { color: var(--gold-dim); }
+
+.aviso-footer-note {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+.aviso-footer-note span {
+  font-family: var(--font-sans);
+  font-weight: 200;
+  font-size: 0.46rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  line-height: 1.9;
+}
+
 /* ─── Modal ──────────────────────────────────────────────── */
 .modal-overlay {
   position: fixed;
