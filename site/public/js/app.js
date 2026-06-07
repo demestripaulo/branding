@@ -8,7 +8,7 @@ let activeCategory = 'all';
 let searchQuery = '';
 
 /* ── Router ─────────────────────────────────────────────────── */
-const VIEWS = ['oracle', 'biblioteca', 'sobre'];
+const VIEWS = ['oracle', 'biblioteca', 'sobre', 'aviso'];
 
 function getRoute() {
   return location.hash.replace('#', '') || 'oracle';
@@ -29,6 +29,10 @@ function renderRoute() {
   });
   if (route === 'oracle') setupOracle();
   if (route === 'biblioteca') renderBiblioteca();
+
+  // Footer: hide on oracle (full-screen), show on all other views
+  const footer = document.getElementById('site-footer');
+  if (footer) footer.classList.toggle('visible', route !== 'oracle');
 }
 
 window.addEventListener('hashchange', renderRoute);
