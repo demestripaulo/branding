@@ -69,7 +69,7 @@ nav {
 
 .nav-brand {
   font-family: var(--font-sc);
-  font-size: 0.72rem;
+  font-size: 0.9rem;
   letter-spacing: 0.2em;
   color: var(--gold);
   text-decoration: none;
@@ -86,8 +86,8 @@ nav {
 .nav-links a {
   font-family: var(--font-sans);
   font-weight: 300;
-  font-size: 0.6rem;
-  letter-spacing: 0.38em;
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--text-dim);
   text-decoration: none;
@@ -149,24 +149,43 @@ main {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  text-align: center;
+  text-align: left;
   padding: calc(var(--nav-h) + 4rem) var(--gutter) 4rem;
   position: relative;
   overflow: hidden;
+  /* Portrait background — ativa quando /images/hero-bg.jpg estiver no repo */
+  background-image: url('/images/hero-bg.jpg');
+  background-size: cover;
+  background-position: center 15%;
+}
+
+/* Overlay direcional: escuro à esquerda (texto), semi-transparente à direita (rosto) */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    100deg,
+    rgba(8, 8, 12, 0.96) 0%,
+    rgba(8, 8, 12, 0.88) 38%,
+    rgba(8, 8, 12, 0.55) 62%,
+    rgba(8, 8, 12, 0.65) 100%
+  );
+  z-index: 0;
 }
 
 .hero-glow {
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 25%;
   transform: translate(-50%, -50%);
-  width: 70vw;
-  height: 70vw;
-  max-width: 900px;
-  max-height: 900px;
-  background: radial-gradient(ellipse, rgba(196, 154, 60, 0.07) 0%, rgba(122, 96, 37, 0.03) 40%, transparent 68%);
+  width: 50vw;
+  height: 50vw;
+  max-width: 700px;
+  max-height: 700px;
+  background: radial-gradient(ellipse, rgba(196, 154, 60, 0.08) 0%, rgba(122, 96, 37, 0.03) 40%, transparent 68%);
   pointer-events: none;
   z-index: 0;
 }
@@ -176,16 +195,16 @@ main {
   z-index: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: 0;
-  max-width: 760px;
+  max-width: 600px;
 }
 
 .hero-eyebrow {
   font-family: var(--font-sans);
   font-weight: 200;
-  font-size: 0.5rem;
-  letter-spacing: 0.6em;
+  font-size: 0.65rem;
+  letter-spacing: 0.55em;
   text-transform: uppercase;
   color: var(--gold-dim);
   margin-bottom: 2.8rem;
@@ -242,13 +261,13 @@ main {
   display: inline-block;
   font-family: var(--font-sans);
   font-weight: 300;
-  font-size: 0.5rem;
-  letter-spacing: 0.5em;
+  font-size: 0.68rem;
+  letter-spacing: 0.42em;
   text-transform: uppercase;
   color: var(--gold);
   text-decoration: none;
   border: 1px solid var(--gold-dim);
-  padding: 1rem 2.4rem;
+  padding: 1.1rem 3rem;
   transition: all 0.3s var(--ease-out);
   position: relative;
   overflow: hidden;
@@ -367,8 +386,8 @@ main {
 .oracle-category {
   font-family: var(--font-sans);
   font-weight: 300;
-  font-size: 0.5rem;
-  letter-spacing: 0.55em;
+  font-size: 0.65rem;
+  letter-spacing: 0.45em;
   text-transform: uppercase;
   color: var(--gold);
   margin-bottom: 2.2rem;
@@ -398,8 +417,8 @@ main {
 .oracle-source {
   font-family: var(--font-sans);
   font-weight: 200;
-  font-size: 0.5rem;
-  letter-spacing: 0.42em;
+  font-size: 0.62rem;
+  letter-spacing: 0.35em;
   text-transform: uppercase;
   color: var(--text-dim);
   transition: opacity 0.4s 0.3s;
@@ -431,11 +450,11 @@ main {
   cursor: pointer;
   font-family: var(--font-sans);
   font-weight: 200;
-  font-size: 0.48rem;
-  letter-spacing: 0.44em;
+  font-size: 0.68rem;
+  letter-spacing: 0.35em;
   text-transform: uppercase;
   color: var(--text-dim);
-  padding: 0.5rem 0;
+  padding: 0.7rem 0;
   transition: color 0.25s;
   position: relative;
 }
@@ -458,7 +477,7 @@ main {
   right: var(--gutter);
   font-family: var(--font-sans);
   font-weight: 200;
-  font-size: 0.46rem;
+  font-size: 0.6rem;
   letter-spacing: 0.3em;
   color: var(--text-muted);
   z-index: 10;
@@ -523,10 +542,10 @@ main {
   color: var(--text-dim);
   font-family: var(--font-sans);
   font-weight: 300;
-  font-size: 0.5rem;
-  letter-spacing: 0.38em;
+  font-size: 0.65rem;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
-  padding: 0.45rem 1rem;
+  padding: 0.6rem 1.4rem;
   cursor: pointer;
   transition: all 0.2s;
 }
@@ -560,14 +579,14 @@ main {
 /* Cards grid */
 .cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
   gap: 1px;
   background: var(--border);
 }
 
 .insight-card {
   background: var(--bg);
-  padding: 2rem 1.8rem;
+  padding: 2.4rem 2.2rem;
   cursor: pointer;
   transition: background 0.2s;
   position: relative;
@@ -581,14 +600,14 @@ main {
 .card-cat {
   font-family: var(--font-sans);
   font-weight: 300;
-  font-size: 0.46rem;
-  letter-spacing: 0.5em;
+  font-size: 0.62rem;
+  letter-spacing: 0.4em;
   text-transform: uppercase;
   color: var(--gold-dim);
 }
 
 .card-text {
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 300;
   font-style: italic;
   line-height: 1.7;
@@ -605,8 +624,8 @@ main {
 .card-source {
   font-family: var(--font-sans);
   font-weight: 200;
-  font-size: 0.44rem;
-  letter-spacing: 0.3em;
+  font-size: 0.6rem;
+  letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--text-muted);
 }
