@@ -23,7 +23,7 @@ html { scroll-behavior: smooth; }
   --font-sc:     'IM Fell English SC', serif;
   --font-sans:   'Raleway', system-ui, sans-serif;
 
-  --nav-h:       60px;
+  --nav-h:       72px;
   --max-w:       1120px;
   --gutter:      clamp(1.2rem, 4vw, 3rem);
 
@@ -69,8 +69,8 @@ nav {
 
 .nav-brand {
   font-family: var(--font-sc);
-  font-size: 0.9rem;
-  letter-spacing: 0.2em;
+  font-size: 1.1rem;
+  letter-spacing: 0.18em;
   color: var(--gold);
   text-decoration: none;
   white-space: nowrap;
@@ -86,8 +86,8 @@ nav {
 .nav-links a {
   font-family: var(--font-sans);
   font-weight: 300;
-  font-size: 0.75rem;
-  letter-spacing: 0.3em;
+  font-size: 0.88rem;
+  letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--text-dim);
   text-decoration: none;
@@ -449,12 +449,12 @@ main {
   border: none;
   cursor: pointer;
   font-family: var(--font-sans);
-  font-weight: 200;
-  font-size: 0.68rem;
-  letter-spacing: 0.35em;
+  font-weight: 300;
+  font-size: 0.85rem;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: var(--text-dim);
-  padding: 0.7rem 0;
+  color: var(--text-mid);
+  padding: 0.8rem 0;
   transition: color 0.25s;
   position: relative;
 }
@@ -522,8 +522,8 @@ main {
 .bib-count {
   font-family: var(--font-sans);
   font-weight: 200;
-  font-size: 0.55rem;
-  letter-spacing: 0.4em;
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--text-mid);
 }
@@ -537,19 +537,19 @@ main {
 }
 
 .filter-btn {
-  background: var(--bg2);
-  border: 1px solid var(--border);
-  color: var(--text-dim);
+  background: var(--bg3);
+  border: 1px solid var(--border-mid);
+  color: var(--text-mid);
   font-family: var(--font-sans);
   font-weight: 300;
-  font-size: 0.65rem;
-  letter-spacing: 0.28em;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  padding: 0.6rem 1.4rem;
+  padding: 0.65rem 1.5rem;
   cursor: pointer;
   transition: all 0.2s;
 }
-.filter-btn:hover { border-color: var(--gold-dim); color: var(--text-mid); }
+.filter-btn:hover { border-color: var(--gold-dim); color: var(--text); }
 .filter-btn.active {
   background: var(--gold-faint);
   border-color: var(--gold);
