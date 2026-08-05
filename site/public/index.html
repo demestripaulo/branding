@@ -23,22 +23,45 @@
 
   <!-- ── Nav ────────────────────────────────────────────── -->
   <nav>
-    <a class="nav-brand" href="#oracle">
+    <a class="nav-brand" href="#section-hero">
       Mente Curada <span>· Chris Kumakola</span>
     </a>
     <ul class="nav-links">
-      <li><a href="#oracle"     data-route="oracle">Oráculo</a></li>
-      <li><a href="#biblioteca" data-route="biblioteca">Biblioteca</a></li>
-      <li><a href="#sobre"      data-route="sobre">Sobre</a></li>
-      <li><a href="#aviso"      data-route="aviso">Aviso Legal</a></li>
+      <li><a href="#section-oracle"     data-section="oracle">Oráculo</a></li>
+      <li><a href="#section-biblioteca" data-section="biblioteca">Biblioteca</a></li>
+      <li><a href="#section-sobre"      data-section="sobre">Sobre</a></li>
+      <li><a href="#section-aviso"      data-section="aviso">Aviso Legal</a></li>
     </ul>
   </nav>
 
   <!-- ── Main ───────────────────────────────────────────── -->
   <main>
 
-    <!-- Oracle view -->
-    <section id="view-oracle" class="view">
+    <!-- Hero section -->
+    <section id="section-hero" class="full-section hero-section">
+      <div class="hero-glow"></div>
+      <div class="hero-content">
+        <span class="hero-eyebrow reveal">Curadoria · Chris Kumakola</span>
+        <h1 class="hero-title reveal reveal-delay-1">
+          <em>Narrativa</em>
+          <span>muda destino.</span>
+        </h1>
+        <div class="hero-divider reveal reveal-delay-2"></div>
+        <p class="hero-sub reveal reveal-delay-3">58 insights sobre identidade, autoridade e posicionamento.</p>
+        <a class="hero-cta reveal reveal-delay-4" href="#section-oracle">Explorar o Oráculo</a>
+      </div>
+      <div class="hero-scroll-hint">
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- Oracle section -->
+    <section id="section-oracle" class="full-section oracle-section">
+      <div class="section-label-wrap">
+        <span class="section-label">Oráculo</span>
+        <div class="section-label-line"></div>
+      </div>
+
       <div class="oracle-inner">
         <div class="oracle-eye"></div>
         <p class="oracle-category" id="oracle-category">—</p>
@@ -58,17 +81,17 @@
       <div class="oracle-counter" id="oracle-counter"></div>
       <div class="oracle-kbd">← espaço →</div>
       <div class="oracle-touch-hint">← deslize →</div>
-      <a class="oracle-legal-link" href="#aviso" data-route="aviso">Aviso Legal</a>
+      <a class="oracle-legal-link" href="#section-aviso">Aviso Legal</a>
     </section>
 
-    <!-- Biblioteca view -->
-    <section id="view-biblioteca" class="view">
-      <div class="bib-header">
+    <!-- Biblioteca section -->
+    <section id="section-biblioteca" class="biblioteca-section">
+      <div class="bib-header reveal">
         <h1 class="bib-title">Biblioteca</h1>
         <span class="bib-count" id="bib-count"></span>
       </div>
 
-      <div class="search-wrap">
+      <div class="search-wrap reveal reveal-delay-1">
         <input
           class="search-input"
           id="bib-search"
@@ -78,19 +101,19 @@
         />
       </div>
 
-      <div class="filter-bar" id="bib-filters"></div>
+      <div class="filter-bar reveal reveal-delay-2" id="bib-filters"></div>
 
-      <div class="cards-grid" id="bib-cards"></div>
+      <div class="cards-grid reveal reveal-delay-3" id="bib-cards"></div>
     </section>
 
-    <!-- Sobre view -->
-    <section id="view-sobre" class="view">
-      <div class="sobre-head">
+    <!-- Sobre section -->
+    <section id="section-sobre" class="sobre-section">
+      <div class="sobre-head reveal">
         <span class="sobre-kicker">Curadoria · Chris Kumakola</span>
         <h1 class="sobre-title">Narrativa muda destino</h1>
       </div>
 
-      <div class="sobre-body">
+      <div class="sobre-body reveal reveal-delay-1">
         <p>
           <strong>Mente Curada</strong> é uma curadoria pessoal do pensamento público de
           Chris Kumakola — analista comportamental, estrategista de narrativa,
@@ -143,11 +166,11 @@
       </div>
     </section>
 
-    <!-- Aviso Legal view -->
-    <section id="view-aviso" class="view">
+    <!-- Aviso Legal section -->
+    <section id="section-aviso">
       <div class="aviso-wrap">
 
-        <div class="aviso-head">
+        <div class="aviso-head reveal">
           <span class="aviso-kicker">Transparência · Direitos · Responsabilidade</span>
           <h1 class="aviso-title">Aviso Legal</h1>
           <p class="aviso-subtitle">
@@ -157,7 +180,7 @@
           </p>
         </div>
 
-        <div class="aviso-body">
+        <div class="aviso-body reveal reveal-delay-1">
 
           <div class="aviso-section">
             <h2 class="aviso-section-title">1. Finalidade Exclusivamente Educacional</h2>
@@ -294,7 +317,7 @@
         Website independente · Fins exclusivamente educacionais · Sem fins comerciais ·
         Nenhuma intenção de reproduzir ou denegrir a imagem da autora.
       </p>
-      <a class="footer-legal-link" href="#aviso" data-route="aviso">Aviso Legal completo →</a>
+      <a class="footer-legal-link" href="#section-aviso">Aviso Legal completo →</a>
     </div>
   </footer>
 

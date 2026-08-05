@@ -110,37 +110,233 @@ nav {
 
 /* ─── Main layout ────────────────────────────────────────── */
 main {
-  padding-top: var(--nav-h);
+  padding-top: 0;
+}
+
+/* ─── Section base ───────────────────────────────────────── */
+.full-section {
+  position: relative;
+  width: 100%;
+}
+
+.oracle-section {
   min-height: 100vh;
-}
-
-.view {
-  display: none;
-  animation: view-in 0.5s var(--ease-out) both;
-}
-.view.active { display: block; }
-
-@keyframes view-in {
-  from { opacity: 0; transform: translateY(10px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-/* ─── Oracle view ────────────────────────────────────────── */
-#view-oracle {
-  height: calc(100vh - var(--nav-h));
-  display: none;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 2rem var(--gutter);
+  padding: 2rem var(--gutter) 8rem;
+}
+
+.biblioteca-section {
+  padding: 5rem var(--gutter) 5rem;
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+
+.sobre-section {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 5rem var(--gutter) 5rem;
+}
+
+#section-aviso {
+  padding: 5rem var(--gutter) 5rem;
+}
+
+/* ─── Hero Section ───────────────────────────────────────── */
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: calc(var(--nav-h) + 4rem) var(--gutter) 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70vw;
+  height: 70vw;
+  max-width: 900px;
+  max-height: 900px;
+  background: radial-gradient(ellipse, rgba(196, 154, 60, 0.07) 0%, rgba(122, 96, 37, 0.03) 40%, transparent 68%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  max-width: 760px;
+}
+
+.hero-eyebrow {
+  font-family: var(--font-sans);
+  font-weight: 200;
+  font-size: 0.5rem;
+  letter-spacing: 0.6em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  margin-bottom: 2.8rem;
+  display: block;
+}
+
+.hero-title {
+  font-family: var(--font-serif);
+  font-weight: 300;
+  line-height: 1.1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+  margin-bottom: 2.8rem;
+}
+
+.hero-title em {
+  font-style: italic;
+  font-size: clamp(4rem, 10vw, 8rem);
+  background: linear-gradient(135deg, #7a6025 0%, #c49a3c 35%, #f0d080 55%, #c49a3c 75%, #7a6025 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: block;
+}
+
+.hero-title span {
+  font-style: normal;
+  font-size: clamp(2rem, 5vw, 4rem);
+  color: var(--text);
+  letter-spacing: 0.02em;
+  display: block;
+}
+
+.hero-divider {
+  width: 40px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold-dim), transparent);
+  margin-bottom: 2rem;
+}
+
+.hero-sub {
+  font-family: var(--font-serif);
+  font-weight: 300;
+  font-style: italic;
+  font-size: clamp(0.9rem, 1.6vw, 1.1rem);
+  color: var(--text-mid);
+  line-height: 1.7;
+  margin-bottom: 3rem;
+  letter-spacing: 0.02em;
+}
+
+.hero-cta {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: 0.5rem;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-decoration: none;
+  border: 1px solid var(--gold-dim);
+  padding: 1rem 2.4rem;
+  transition: all 0.3s var(--ease-out);
+  position: relative;
+  overflow: hidden;
+}
+.hero-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gold-faint);
+  transform: translateX(-101%);
+  transition: transform 0.3s var(--ease-out);
+}
+.hero-cta:hover::before { transform: translateX(0); }
+.hero-cta:hover { border-color: var(--gold); }
+
+.hero-scroll-hint {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.scroll-line {
+  width: 1px;
+  height: 56px;
+  background: linear-gradient(to bottom, var(--gold-dim), transparent);
+  animation: scroll-pulse 2.2s var(--ease-in-out) infinite;
+}
+
+@keyframes scroll-pulse {
+  0%   { transform: scaleY(1); opacity: 0.7; }
+  50%  { transform: scaleY(0.4); opacity: 0.2; }
+  100% { transform: scaleY(1); opacity: 0.7; }
+}
+
+/* ─── Section Labels ─────────────────────────────────────── */
+.section-label-wrap {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  position: absolute;
+  top: 2.5rem;
+  left: var(--gutter);
+}
+
+.section-label {
+  font-family: var(--font-sans);
+  font-weight: 200;
+  font-size: 0.44rem;
+  letter-spacing: 0.55em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.section-label-line {
+  width: 32px;
+  height: 1px;
+  background: linear-gradient(to right, var(--gold-dim), transparent);
+}
+
+/* ─── Scroll reveal ──────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.85s var(--ease-out), transform 0.85s var(--ease-out);
+}
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.12s; }
+.reveal-delay-2 { transition-delay: 0.24s; }
+.reveal-delay-3 { transition-delay: 0.36s; }
+.reveal-delay-4 { transition-delay: 0.48s; }
+
+/* ─── Oracle section ─────────────────────────────────────── */
+#section-oracle {
   position: relative;
 }
-#view-oracle.active { display: flex; }
 
 /* Vignette */
-#view-oracle::after {
+#section-oracle::after {
   content: '';
-  position: fixed;
+  position: absolute;
   inset: 0;
   background: radial-gradient(ellipse at center, transparent 35%, rgba(0,0,0,0.65) 100%);
   pointer-events: none;
@@ -217,7 +413,7 @@ main {
 
 /* Oracle controls */
 .oracle-controls {
-  position: fixed;
+  position: absolute;
   bottom: 2.5rem;
   left: 50%;
   transform: translateX(-50%);
@@ -257,7 +453,7 @@ main {
 .ctrl-dot { width: 2px; height: 2px; border-radius: 50%; background: var(--text-muted); }
 
 .oracle-counter {
-  position: fixed;
+  position: absolute;
   bottom: 2.5rem;
   right: var(--gutter);
   font-family: var(--font-sans);
@@ -271,7 +467,7 @@ main {
 }
 
 .oracle-kbd {
-  position: fixed;
+  position: absolute;
   bottom: 2.5rem;
   left: var(--gutter);
   font-family: var(--font-sans);
@@ -284,13 +480,7 @@ main {
   animation: fade-up 1s var(--ease-out) 1.2s both;
 }
 
-/* ─── Biblioteca view ────────────────────────────────────── */
-#view-biblioteca {
-  padding: 3.5rem var(--gutter) 5rem;
-  max-width: var(--max-w);
-  margin: 0 auto;
-}
-
+/* ─── Biblioteca section ─────────────────────────────────── */
 .bib-header {
   margin-bottom: 3rem;
   padding-bottom: 2rem;
@@ -441,13 +631,7 @@ main {
   text-transform: uppercase;
 }
 
-/* ─── About view ─────────────────────────────────────────── */
-#view-sobre {
-  max-width: 680px;
-  margin: 0 auto;
-  padding: 3.5rem var(--gutter) 5rem;
-}
-
+/* ─── About section ──────────────────────────────────────── */
 .sobre-head {
   margin-bottom: 3rem;
   padding-bottom: 2rem;
@@ -537,8 +721,8 @@ main {
 
 /* ─── Oracle legal link ──────────────────────────────────── */
 .oracle-legal-link {
-  position: fixed;
-  top: calc(var(--nav-h) + 0.8rem);
+  position: absolute;
+  bottom: 1rem;
   right: var(--gutter);
   font-family: var(--font-sans);
   font-weight: 200;
@@ -554,12 +738,11 @@ main {
 
 /* ─── Footer ─────────────────────────────────────────────── */
 #site-footer {
+  display: block;
   background: var(--bg);
   border-top: 1px solid var(--border);
   padding: 2rem var(--gutter);
-  display: none; /* shown via JS on non-oracle views */
 }
-#site-footer.visible { display: block; }
 
 .footer-inner {
   max-width: var(--max-w);
@@ -620,11 +803,7 @@ main {
 .footer-legal-link:hover { color: var(--gold); }
 .footer-legal-link:hover::after { right: 0; }
 
-/* ─── Aviso Legal view ───────────────────────────────────── */
-#view-aviso {
-  padding: 3.5rem var(--gutter) 5rem;
-}
-
+/* ─── Aviso Legal section ────────────────────────────────── */
 .aviso-wrap {
   max-width: 720px;
   margin: 0 auto;
@@ -909,7 +1088,7 @@ main {
 /* ─── Touch hint (hidden by default, shown on mobile) ────── */
 .oracle-touch-hint {
   display: none;
-  position: fixed;
+  position: absolute;
   bottom: 2rem;
   left: var(--gutter);
   font-family: var(--font-sans);
@@ -928,13 +1107,10 @@ main {
   .nav-links { gap: 1rem; }
   .nav-brand span { display: none; }
 
-  #view-oracle {
-    height: auto;
-    min-height: calc(100vh - var(--nav-h));
+  #section-oracle {
     justify-content: flex-start;
     padding-top: 2.5rem;
     padding-bottom: 7.5rem;
-    overflow-y: auto;
   }
   .oracle-text { font-size: 1.2rem; min-height: 0; }
   .oracle-kbd { display: none; }
@@ -949,4 +1125,8 @@ main {
   .modal-actions { flex-wrap: wrap; }
 
   .sobre-body p { font-size: 0.95rem; }
+
+  .hero-title em { font-size: clamp(3rem, 14vw, 5rem); }
+  .hero-title span { font-size: clamp(1.5rem, 7vw, 2.5rem); }
+  .section-label-wrap { top: 1.5rem; }
 }

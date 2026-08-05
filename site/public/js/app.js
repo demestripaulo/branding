@@ -7,42 +7,20 @@ let oracleIdx = 0;
 let activeCategory = 'all';
 let searchQuery = '';
 
-/* ── Router ─────────────────────────────────────────────────── */
-const VIEWS = ['oracle', 'biblioteca', 'sobre', 'aviso'];
-
-function getRoute() {
-  return location.hash.replace('#', '') || 'oracle';
+/* ── Scroll navigation ──────────────────────────────────────── */
+function scrollToSection(id) {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: 'smooth' });
 }
-
-function navigate(route) {
-  location.hash = route;
-}
-
-function renderRoute() {
-  const route = getRoute();
-  VIEWS.forEach(v => {
-    const el = document.getElementById(`view-${v}`);
-    const link = document.querySelector(`[data-route="${v}"]`);
-    if (!el) return;
-    el.classList.toggle('active', v === route);
-    if (link) link.classList.toggle('active', v === route);
-  });
-  if (route === 'oracle') setupOracle();
-  if (route === 'biblioteca') renderBiblioteca();
-
-  // Footer: hide on oracle (full-screen), show on all other views
-  const footer = document.getElementById('site-footer');
-  if (footer) footer.classList.toggle('visible', route !== 'oracle');
-}
-
-window.addEventListener('hashchange', renderRoute);
 
 /* ── Data ───────────────────────────────────────────────────── */
 async function loadInsights() {
   const r = await fetch('/data/insights.json');
   insights = await r.json();
   filtered = [...insights];
-  renderRoute();
+  setupOracle();
+  renderBiblioteca();
+  setupReveal();
 }
 
 /* ── Oracle ─────────────────────────────────────────────────── */
@@ -215,16 +193,17 @@ function openModal(it) {
   overlay.classList.add('open');
   document.body.style.overflow = 'hidden';
 
-  // Oracle action: send to oracle
+  // Oracle action: send to oracle and scroll
   const oracleBtn = document.getElementById('modal-oracle-btn');
   if (oracleBtn) {
     oracleBtn.onclick = () => {
       const realIdx = insights.findIndex(x => x.id === it.id);
       if (realIdx !== -1) {
         oracleIdx = oracleOrder.indexOf(realIdx);
-        navigate('oracle');
+        showOracle(oracleIdx);
       }
       closeModal();
+      scrollToSection('section-oracle');
     };
   }
 }
@@ -247,14 +226,53 @@ function copyText(text) {
   });
 }
 
+/* ── Scroll reveal ──────────────────────────────────────────── */
+function setupReveal() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+}
+
+/* ── Active nav on scroll ───────────────────────────────────── */
+function setupNavObserver() {
+  const sections = ['oracle', 'biblioteca', 'sobre', 'aviso'];
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id.replace('section-', '');
+        document.querySelectorAll('[data-section]').forEach(a =>
+          a.classList.toggle('active', a.dataset.section === id));
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+
+  sections.forEach(id => {
+    const el = document.getElementById(`section-${id}`);
+    if (el) observer.observe(el);
+  });
+}
+
 /* ── Event bindings ─────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', () => {
 
-  // Nav links
-  document.querySelectorAll('[data-route]').forEach(el => {
+  // Nav brand
+  document.querySelector('.nav-brand')?.addEventListener('click', e => {
+    e.preventDefault();
+    scrollToSection('section-hero');
+  });
+
+  // Nav section links
+  document.querySelectorAll('[data-section]').forEach(el => {
     el.addEventListener('click', e => {
       e.preventDefault();
-      navigate(el.dataset.route);
+      scrollToSection(`section-${el.dataset.section}`);
     });
   });
 
@@ -263,13 +281,12 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('btn-prev')?.addEventListener('click', oraclePrev);
   document.getElementById('btn-random')?.addEventListener('click', oracleRandom);
 
-  // Keyboard
+  // Keyboard — always active, no route check needed
   document.addEventListener('keydown', e => {
     if (document.getElementById('modal-overlay')?.classList.contains('open')) {
       if (e.key === 'Escape') closeModal();
       return;
     }
-    if (getRoute() !== 'oracle') return;
     if (e.key === 'ArrowRight') oracleNext();
     if (e.key === 'ArrowLeft')  oraclePrev();
     if (e.key === ' ') { e.preventDefault(); oracleRandom(); }
@@ -278,7 +295,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Search
   document.getElementById('bib-search')?.addEventListener('input', e => {
     searchQuery = e.target.value;
-    if (getRoute() === 'biblioteca') renderBiblioteca();
+    renderBiblioteca();
   });
 
   // Modal
@@ -286,7 +303,6 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('modal-overlay')?.addEventListener('click', e => {
     if (e.target === e.currentTarget) closeModal();
   });
-
   document.getElementById('modal-copy-btn')?.addEventListener('click', () => {
     const text = document.getElementById('modal-text')?.textContent || '';
     copyText(text);
@@ -294,13 +310,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Touch swipe for oracle navigation
   let _touchX = 0, _touchY = 0;
-  const oracleView = document.getElementById('view-oracle');
-  if (oracleView) {
-    oracleView.addEventListener('touchstart', e => {
+  const oracleEl = document.getElementById('section-oracle');
+  if (oracleEl) {
+    oracleEl.addEventListener('touchstart', e => {
       _touchX = e.touches[0].clientX;
       _touchY = e.touches[0].clientY;
     }, { passive: true });
-    oracleView.addEventListener('touchend', e => {
+    oracleEl.addEventListener('touchend', e => {
       const dx = e.changedTouches[0].clientX - _touchX;
       const dy = e.changedTouches[0].clientY - _touchY;
       if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5) {
@@ -309,5 +325,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: true });
   }
 
+  setupNavObserver();
   loadInsights();
 });
